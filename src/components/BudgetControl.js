@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { checkBudget } from "../helpers";
+import PropTypes from "prop-types";
 
 const BudgetControl = ({ estimate, rest }) => {
   return (
@@ -11,4 +12,8 @@ const BudgetControl = ({ estimate, rest }) => {
   );
 };
 
+BudgetControl.propTypes = {
+  estimate: PropTypes.number.isRequired,
+  rest: PropTypes.number.isRequired,
+};
 export default BudgetControl;

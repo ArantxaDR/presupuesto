@@ -1,5 +1,6 @@
 import React from "react";
 import Expense from "./Expense";
+import PropTypes from "prop-types";
 
 const List = ({ expenses }) => {
   return (
@@ -12,4 +13,7 @@ const List = ({ expenses }) => {
   );
 };
 
+List.propTypes = {
+  expenses: PropTypes.array.isRequired,
+};
 export default List;

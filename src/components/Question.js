@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import Error from "./Error";
+import PropTypes from "prop-types";
 
 const Question = ({ saveEstimate, saveRest, updateQuestion }) => {
   //Definir el state
@@ -51,4 +52,9 @@ const Question = ({ saveEstimate, saveRest, updateQuestion }) => {
   );
 };
 
+Question.propTypes = {
+  saveEstimate: PropTypes.func.isRequired,
+  saveRest: PropTypes.func.isRequired,
+  updateQuestion: PropTypes.func.isRequired,
+};
 export default Question;

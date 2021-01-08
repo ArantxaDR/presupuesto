@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Error from "./Error";
 import shortid from "shortid";
+import PropTypes from "prop-types";
 
 const Form = ({ saveExpense, saveCreateExpense }) => {
   const [name, saveName] = useState("");
@@ -24,7 +25,7 @@ const Form = ({ saveExpense, saveCreateExpense }) => {
       amount,
       id: shortid.generate(),
     };
-    console.log(expense);
+
     //pasar el gasto al componente principal
     saveExpense(expense);
     saveCreateExpense(true);
@@ -63,6 +64,11 @@ const Form = ({ saveExpense, saveCreateExpense }) => {
       />
     </form>
   );
+};
+
+Form.propTypes = {
+  saveExpense: PropTypes.func.isRequired,
+  saveCreateExpense: PropTypes.func.isRequired,
 };
 
 export default Form;
